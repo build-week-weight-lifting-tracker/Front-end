@@ -31,7 +31,15 @@ const Login = withFormik({
         username: Yup.string().required('User Name is Required'),
         password: Yup.string().min(7, 'Password Must Be Longer Than 7 Characters').required('Password is Required')
     }),
-    
-})
+    handleSubmit(values,{ resetForm }) {
+        axios.post('', values)
+            .then(response => {
+                console.log(response)
+                resetForm()
+            })
+            .catch(err => console.log(err))
+    }
+
+})(LoginInput)
 
 export default Login;
