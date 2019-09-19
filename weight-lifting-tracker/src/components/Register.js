@@ -1,35 +1,49 @@
 import React from 'react';
-import { withFormik, Form, Field } from 'formik';
+import { withFormik, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+
+// Styled component imported for the registration form submit button
+import { LoginButton } from '../styledElements/buttons';
+//  Styled components for the form container and the input field containers
+import { FormContainer, FieldDiv } from '../styledElements/containers';
+// Styled component for the heading in the form
+import { FormHeading } from '../styledElements/headings';
+
 
 function InputForm({values, errors, touched}) {
 
     return (
         
-        <Form>
-            <div>
+        <FormContainer>
+            <FormHeading>Register Here</FormHeading>
+            <FieldDiv>
+                {/* Users First Name Input */}
                 {touched.first && errors.first && <p>{errors.first}</p>}
                 <Field type='text' name='first' placeholder='First Name' />
-            </div>
-            <div>
+            </FieldDiv>
+            <FieldDiv>
+                {/* Users Last Name Input */}
                 {touched.last && errors.last && <p>{errors.last}</p>}
                 <Field type='text' name='last' placeholder='Last Name' />
-            </div>
-            <div>
+            </FieldDiv>
+            <FieldDiv>
+                {/* Users Email Address Input */}
                 {touched.email && errors.email && <p>{errors.email}</p>}
                 <Field type='email' name='email' placeholder='E-Mail Address' />
-            </div>
-            <div>
+            </FieldDiv>
+            <FieldDiv>
+                {/* Users Username Creation Input */}
                 {touched.username && errors.username && <p>{errors.username}</p>}
                 <Field type='text' name='username' placeholder='User Name' />
-            </div>
-            <div>
+            </FieldDiv>
+            <FieldDiv>
+                {/* User Password Creation Input */}
                 {touched.password && errors.password && <p>{errors.password}</p>}
                 <Field type='password' name='password' placeholder='Password' />
-            </div>
-            <button type='submit'>Submit</button>
-        </Form>
+            </FieldDiv>
+            <LoginButton type='submit'>Submit</LoginButton>
+        </FormContainer>
 
     )
 }
@@ -53,12 +67,13 @@ const Register = withFormik({
     }),
 
     handleSubmit(values, { resetForm }) {
-        axios.post('', values)
-            .then(response => {
-                console.log(responcse)
-                resetForm()
-            })
-            .catch(err => console.log(err))
+        // axios.post('', values)
+        //     .then(response => {
+        //         console.log(response)
+        //         resetForm()
+        //     })
+        //     .catch(err => console.log(err))
+        console.log(values)
     }
 })(InputForm)
 
