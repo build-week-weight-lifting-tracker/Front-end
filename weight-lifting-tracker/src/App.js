@@ -1,13 +1,17 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+
+import { AppContainer } from './styledElements/containers';
+
+import Register from './components/Register';
 
 
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <AppContainer>
+      <Register />
+    </AppContainer>
   );
 }
 

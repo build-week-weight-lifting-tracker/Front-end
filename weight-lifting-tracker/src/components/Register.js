@@ -3,33 +3,39 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+import { LoginButton } from '../styledElements/buttons';
+import { FormContainer, FieldDiv } from '../styledElements/containers';
+import { FormHeading } from '../styledElements/headings';
+
+
 function InputForm({values, errors, touched}) {
 
     return (
         
-        <Form>
-            <div>
+        <FormContainer>
+            <FormHeading>Register Here</FormHeading>
+            <FieldDiv>
                 {touched.first && errors.first && <p>{errors.first}</p>}
                 <Field type='text' name='first' placeholder='First Name' />
-            </div>
-            <div>
+            </FieldDiv>
+            <FieldDiv>
                 {touched.last && errors.last && <p>{errors.last}</p>}
                 <Field type='text' name='last' placeholder='Last Name' />
-            </div>
-            <div>
+            </FieldDiv>
+            <FieldDiv>
                 {touched.email && errors.email && <p>{errors.email}</p>}
                 <Field type='email' name='email' placeholder='E-Mail Address' />
-            </div>
-            <div>
+            </FieldDiv>
+            <FieldDiv>
                 {touched.username && errors.username && <p>{errors.username}</p>}
                 <Field type='text' name='username' placeholder='User Name' />
-            </div>
-            <div>
+            </FieldDiv>
+            <FieldDiv>
                 {touched.password && errors.password && <p>{errors.password}</p>}
                 <Field type='password' name='password' placeholder='Password' />
-            </div>
-            <button type='submit'>Submit</button>
-        </Form>
+            </FieldDiv>
+            <LoginButton type='submit'>Submit</LoginButton>
+        </FormContainer>
 
     )
 }
@@ -53,12 +59,13 @@ const Register = withFormik({
     }),
 
     handleSubmit(values, { resetForm }) {
-        axios.post('', values)
-            .then(response => {
-                console.log(responcse)
-                resetForm()
-            })
-            .catch(err => console.log(err))
+        // axios.post('', values)
+        //     .then(response => {
+        //         console.log(response)
+        //         resetForm()
+        //     })
+        //     .catch(err => console.log(err))
+        console.log(values)
     }
 })(InputForm)
 
