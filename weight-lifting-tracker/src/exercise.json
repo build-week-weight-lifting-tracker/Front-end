@@ -1,0 +1,82 @@
+{
+    "chest":{
+        "id":"1",
+        "exercises":[
+            {"id":"1","type":"Barbell Bench Press"},
+            {"id":"2","type":"Dumbbell Bench Press"},
+            {"id":"3","type":"Incline Barbell Bench Press"},
+            {"id":"4","type":"Incline Dumbbell Bench Press"},
+            {"id":"5","type":"Flat Machine Press"},
+            {"id":"6","type":"Incline Machine Press"},
+            {"id":"7","type":"Decline Machine Press"},
+            {"id":"8","type":"Chest Dips"},
+            {"id":"9","type":"Push-ups"},
+            {"id":"10","type":"Flat Dumbbell Flyes"},
+            {"id":"11","type":"Incline Dumbbell Flyes"},
+            {"id":"12","type":"Decline Dumbbell Flyes"},
+            {"id":"13","type":"Cable Crossover/Cable Flyes"}
+        ]   
+    },
+    "back":{
+        "id":"2",
+        "exercises":[
+            {"id":"1","type":"Pull-ups"},
+            {"id":"2","type":"Chin-ups"},
+            {"id":"3","type":"Lat Pull-downs"},
+            {"id":"4","type":"Bent Over Barbell/Dumbbell Rows"},
+            {"id":"5","type":"T-Bar Rows"},
+            {"id":"6","type":"Seated Cable Rows"},
+            {"id":"7","type":"Chest Supported Barbell/Dumbbell Rows"},
+            {"id":"8","type":"Chest Supported Machine Rows"},
+            {"id":"9","type":"Inverted Rows"},
+            {"id":"10","type":"Barbell, Dumbbell or Machine Rows"}
+        ]   
+    },
+    "arms":{
+        "id":"3",
+        "exercises":[
+            {"id":"1","type":"Overhead Barbell/Dunbbell Press"},
+            {"id":"2","type":"Dumbbell, Cable or Machine Front Raises"},
+            {"id":"3","type":"Standing Curls"},
+            {"id":"4","type":"Preacher Curls"},
+            {"id":"5","type":"Dumbell Hammer Curls"},
+            {"id":"6","type":"Skull Crushers"},
+            {"id":"7","type":"Cable Tricep Pulldowns"},
+            {"id":"8","type":"Forearm Finger Roll Curls"},
+            {"id":"9","type":"Overhead Tricep Extensions"},
+            {"id":"10","type":"Bench Dips"}
+        ]  
+    },
+    "legs":{
+        "id":"4",
+        "exercises":[
+            {"id":"1","type":"Barbell Squats"},
+            {"id":"2","type":"Dumbbell Lunges"},
+            {"id":"3","type":"Barbell Front Squats"},
+            {"id":"4","type":"Dumbbell Step-ups"},
+            {"id":"5","type":"Leg Press"},
+            {"id":"6","type":"Machine Squat/Hack Squat"},
+            {"id":"7","type":"Leg Extensions"},
+            {"id":"8","type":"Good-Mornings"},
+            {"id":"9","type":"Barbell Deadlifts"},
+            {"id":"10","type":"Leg Curls"},
+            {"is":"11","type":"Calf Raises"}
+        ] 
+    },
+    "abs/core":{
+        "id":"5",
+        "exercises":[
+            {"id":"1","type":"Machine Crunch"},
+            {"id":"2","type":"Machine Oblique Crunch"},
+            {"id":"3","type":"Plank"},
+            {"id":"4","type":"Decline Sit-ups"},
+            {"id":"5","type":"Sit-ups"},
+            {"id":"6","type":"Leg Raises"},
+            {"id":"7","type":"Hanging Leg Curls"},
+            {"id":"8","type":"Hanging Bicycles"},
+            {"id":"9","type":"Hanging Leg Raises"},
+            {"id":"10","type":"Side Plank"},
+            {"is":"11","type":"Kneeling Cable Crunch"}
+        ] 
+    }
+}
