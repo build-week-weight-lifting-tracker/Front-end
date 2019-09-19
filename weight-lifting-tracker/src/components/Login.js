@@ -1,22 +1,27 @@
 import React from 'react'
-import { withFormik, Form, Field } from 'formik';
+import { withFormik, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+
+import { LoginButton } from '../styledElements/buttons';
+import { FormContainer, FieldDiv } from '../styledElements/containers';
+import { FormHeading } from '../styledElements/headings';
 
 function LoginInput ({values, errors, touched}) {
 
     return (
-        <Form>
-            <div>
+        <FormContainer>
+            <FormHeading>Login</FormHeading>
+            <FieldDiv>
                 {touched.username && errors.username && <p>{errors.username}</p>}
                 <Field type='text' name='username' placeholder='User Name' />
-            </div>
-            <div>
+            </FieldDiv>
+            <FieldDiv>
                 {touched.password && errors.password && <p>{errors.password}</p>}
                 <Field type='text' name='password' placeholder='Password' />
-            </div>
-            <button type='submit'>Submit</button>
-        </Form>
+            </FieldDiv>
+            <LoginButton type='submit'>Submit</LoginButton>
+        </FormContainer>
     )
 }
 
