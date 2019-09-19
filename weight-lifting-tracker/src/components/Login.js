@@ -3,8 +3,11 @@ import { withFormik, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+// Styled component imported for the login form submit button
 import { LoginButton } from '../styledElements/buttons';
+//  Styled components for the form container and the input field containers
 import { FormContainer, FieldDiv } from '../styledElements/containers';
+// Styled component for the heading in the form
 import { FormHeading } from '../styledElements/headings';
 
 function LoginInput ({values, errors, touched}) {
@@ -13,10 +16,12 @@ function LoginInput ({values, errors, touched}) {
         <FormContainer>
             <FormHeading>Login</FormHeading>
             <FieldDiv>
+                {/* User Name Input */}
                 {touched.username && errors.username && <p>{errors.username}</p>}
                 <Field type='text' name='username' placeholder='User Name' />
             </FieldDiv>
             <FieldDiv>
+                {/* User Password Input */}
                 {touched.password && errors.password && <p>{errors.password}</p>}
                 <Field type='text' name='password' placeholder='Password' />
             </FieldDiv>

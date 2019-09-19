@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const LoginButton = styled.button`
     background: none;
     width: 70%;
+    max-width: 300px;
     font-size: 1rem;
     font-weight: 900;
     letter-spacing: 2px;

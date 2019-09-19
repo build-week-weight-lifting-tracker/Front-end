@@ -3,8 +3,11 @@ import { withFormik, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+// Styled component imported for the registration form submit button
 import { LoginButton } from '../styledElements/buttons';
+//  Styled components for the form container and the input field containers
 import { FormContainer, FieldDiv } from '../styledElements/containers';
+// Styled component for the heading in the form
 import { FormHeading } from '../styledElements/headings';
 
 
@@ -15,22 +18,27 @@ function InputForm({values, errors, touched}) {
         <FormContainer>
             <FormHeading>Register Here</FormHeading>
             <FieldDiv>
+                {/* Users First Name Input */}
                 {touched.first && errors.first && <p>{errors.first}</p>}
                 <Field type='text' name='first' placeholder='First Name' />
             </FieldDiv>
             <FieldDiv>
+                {/* Users Last Name Input */}
                 {touched.last && errors.last && <p>{errors.last}</p>}
                 <Field type='text' name='last' placeholder='Last Name' />
             </FieldDiv>
             <FieldDiv>
+                {/* Users Email Address Input */}
                 {touched.email && errors.email && <p>{errors.email}</p>}
                 <Field type='email' name='email' placeholder='E-Mail Address' />
             </FieldDiv>
             <FieldDiv>
+                {/* Users Username Creation Input */}
                 {touched.username && errors.username && <p>{errors.username}</p>}
                 <Field type='text' name='username' placeholder='User Name' />
             </FieldDiv>
             <FieldDiv>
+                {/* User Password Creation Input */}
                 {touched.password && errors.password && <p>{errors.password}</p>}
                 <Field type='password' name='password' placeholder='Password' />
             </FieldDiv>
