@@ -7,6 +7,8 @@ import Equipment from './Equipment'
 import Category from './Category'
 import Exercise from './Exercise'
 import TargetArea from './TargetArea'
+import Header from './Header2'
+import Footer from './Footer'
 
 const api = "https://wger.de/api/v2/"
 
@@ -23,6 +25,8 @@ function WeightForm({values, touched, errors}){
   
 
     return(
+        <>
+        <Header />
         <Form>
             <div>
             <Field component='select' name='daysOfWeek' placeholder='Select Day of The Week'>
@@ -62,8 +66,10 @@ function WeightForm({values, touched, errors}){
             <label>Enter Amount of Weight Used (lbs)
             <Field type='text'name="amountWeight"></Field></label>
             </div>
-        
+                    
         </Form>
+        <Footer />
+        </>
     )
 }
 
