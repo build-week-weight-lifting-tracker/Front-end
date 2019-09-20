@@ -66,7 +66,7 @@ function WeightForm({values, touched, errors}){
             <label>Enter Amount of Weight Used (lbs)
             <Field type='text'name="amountWeight"></Field></label>
             </div>
-                    
+            <button>Submit</button>       
         </Form>
         <Footer />
         </>
