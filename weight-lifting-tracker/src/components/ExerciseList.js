@@ -43,6 +43,7 @@ export default function ExerciseList(props) {
   console.log(props);
 
   const [exercise, setExercise] = useState([]);
+  const [page, setPage] = useState(2);
 
   const id = useEffect(() => {
     const getExercise = () => {
@@ -56,15 +57,29 @@ export default function ExerciseList(props) {
         })
     }
     getExercise();
-  }, []);
+  }, [page]);
 
   console.log(exercise);
+  console.log(page);
+  console.log(page.length);
 
   return (
     <div className='exercise-list grid-view'>
-      {exercise.map((exercise, index) => (
-        <ExerciseDetails key={index} exercise={exercise} />
-      ))}
+      <PageButtons>
+        {page === 2 ? null : <ButtonPrevious onClick={() => setPage(page - 1)}>Previous</ButtonPrevious>}
+
+        {page === page.length ? null : <ButtonNext onClick={() => setPage(page + 1)}>Next</ButtonNext>}
+      </PageButtons>
+      <AppBox>
+        {exercise.map((exercise, index) => (
+          <ExerciseDetails key={index} exercise={exercise} />
+        ))}
+      </AppBox>
+      <PageButtons>
+        {page === 2 ? null : <ButtonPrevious onClick={() => setPage(page - 1)}>Previous</ButtonPrevious>}
+
+        {page === page.length ? null : <ButtonNext onClick={() => setPage(page + 1)}>Next</ButtonNext>}
+      </PageButtons>
     </div>
   );
 }
