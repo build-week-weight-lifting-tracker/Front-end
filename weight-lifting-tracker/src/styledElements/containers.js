@@ -26,3 +26,17 @@ export const FieldDiv = styled.div `
     justify-content: center;
     margin: 5px;
 `
+
+export const HomeContainer = styled.div `
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(52, 27, 43, 0.5);
+    width: 70%;
+    justify-content: center;
+    padding: 50px 0;
+`
+export const ButtonContainer = styled.div `
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+`
