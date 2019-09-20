@@ -25,32 +25,31 @@ function WeightForm({values, touched, errors}){
     return(
         <Form>
             <div>
-            <Field component='select' name='daysOfWeek'>
-                <option>Select Day Of The Week</option>
-                {console.log(exerciseLog)}
+            <Field component='select' name='daysOfWeek' placeholder='Select Day of The Week'>
+                <option>Select Day of The Week'</option>
                 {/*exerciseLog.daysofweek.results.map(dayOfWeek => <DaysOfWeek DOW={dayOfWeek.day_of_week}/>)*/}
             </Field>
             </div>
             <div>
-            <Field component='select' name='category'>
+            <Field component='select' name='category' placeholder='Select Category'>
                 <option>Select Category</option>
                 {/*exerciseLog.exercisecategory.results.map(cat => <Equipment name={cat.name}/>)*/}
             </Field>
             </div>
             <div>
-            <Field component='select' name="bodyPart">
+            <Field component='select' name="bodyPart" placeholder='Select Body Part Targeted'>
                 <option>Select Body Part Targeted</option>
                 {/*exerciseLog.muscle.results.map(part => <TargetArea name={part.name}/>)*/}
             </Field>
             </div>
             <div>
-            <Field component='select' name="exercise">
+            <Field component='select' name="exercise" placeholder='Select Exercise Performed'>
                 <option>Select Exercise Performed</option>
                 {/*exerciseLog.exercise.results.map(movement => <Exercise name={movement.name}/>)*/}
             </Field>
             </div>
             <div>
-            <Field component='select' name='equipmentUsed'>
+            <Field component='select' name='equipmentUsed' placeholder='Select Type of Equipment Used'>
                 <option>Equipment Used</option>
                 {/*exerciseLog.equipment.results.map(type => <Category name={type.name}/>)*/}
             </Field>
