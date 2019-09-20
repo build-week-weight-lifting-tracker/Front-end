@@ -11,7 +11,7 @@ import ExerciseList from './components/ExerciseList.js';
 export default function App() {
   const [user, setUser] = useState('hey');
 
-  
+  const userUpdate = ()
 
 
 
@@ -22,7 +22,7 @@ export default function App() {
       <TabNav />
       <Route exact path='/' component={ExerciseList} /> */}
       {user ? <Route exact path='/' component={ExerciseList} /> : <Route exact path='/' component={Home} />}
-      <Route path='/login' render />
+      <Route path='/login' render={props => <Login {...props}  /> } />
       
     </AppContainer>
 
