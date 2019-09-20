@@ -6,7 +6,7 @@ const newFooter = styled.footer`
 export default function Footer(){
     return(
         <newFooter>
-
+            <p>Copyright&copy;2019. All Rights Reserved</p>
         </newFooter>
     )
 }
