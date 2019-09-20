@@ -1,13 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
 
-const newHeader = styled.header`
+import React from "react";
 
-`
-export default function Header(){
-    return(
-        <newHeader>
-
-        </newHeader>
-    )
+export default function Header() {
+  return (
+    <header className="ui centered">
+      <h1 className="ui center">Exercises</h1>
+    </header>
+  );
 }
+
