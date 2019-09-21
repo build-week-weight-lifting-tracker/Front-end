@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import FormikWeightForm from './components/Journal';
 import Header from './components/Header';
@@ -15,10 +15,11 @@ import Header2 from './components/Header2.js';
 import ExerciseList from './components/ExerciseList.js';
 
 export default function App() {
-  const [user, setUser] = useState('hey');
-
+  const [user, setUser] = useState();
   
 
+  
+ 
 
 
 
@@ -29,7 +30,8 @@ export default function App() {
       <TabNav />
       <Route exact path='/' component={ExerciseList} /> */}
       {user ? <Route exact path='/' component={ExerciseList} /> : <Route exact path='/' component={Home} />}
-      <Route path='/login' render={props => <Login {...props}  /> } />
+      <Route path='/login' render={props => <Login {...props} setUser={setUser} /> } />
+      <Route path='/register' render={props => <Register {...props} setUser={setUser} /> } />
     </AppContainer>
 
 

@@ -66,13 +66,15 @@ const Register = withFormik({
         password: Yup.string().min(7, 'Your password must be at least 7 characters long').required('Password is Required')
     }),
 
-    handleSubmit(values, { resetForm }) {
-        // axios.post('', values)
-        //     .then(response => {
-        //         console.log(response)
-        //         resetForm()
-        //     })
-        //     .catch(err => console.log(err))
+    handleSubmit(values, { resetForm }, props) {
+        axios.post('', values)
+            .then(response => {
+                console.log(response)
+                props.serUser(response.data)
+                props.history.push('/')
+                resetForm()
+            })
+            .catch(err => console.log(err))
         console.log(values)
     }
 })(InputForm)
