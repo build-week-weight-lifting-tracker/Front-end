@@ -10,7 +10,7 @@ const newHeader = styled.header`
 export default function Header(){
     return(
         <newHeader>
-            <h1>WeightLifting Workout Journal</h1> 
+            <h1>WeightLifting Workout Tracker</h1> 
         </newHeader>
     )
 }
