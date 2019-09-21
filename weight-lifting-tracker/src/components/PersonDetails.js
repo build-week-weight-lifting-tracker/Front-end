@@ -1,12 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import GymInfo from './GymInfo'
+import {Card, Image, Grid }  from 'semantic-ui-react'
 
 const Main = styled.main`
     display: flex;
     
 `
-
+const LeftPane = styled.section`
+    width: 35%;
+    background-color: rgb();
+    padding: 3%;
+    margin: 2%;
+`
+const RightPane = styled.section`
+    width: 60%;
+    background-color: rgb();
+    margin: 2%; 
+`
 //Activity Level Factor
 const sedentary = 1.2
 const lightActive = 1.375
@@ -54,26 +65,58 @@ export default function PersonDetails({image, name, age, gender, DOB, location, 
     }
     return (
         <main>
-            <section>
-                <img src={image} />
-                <div><p>>Name: </p><p>{name}</p></div>
-                <div><p>Age: </p><p>{age}</p></div>
-                <div><p>Gender: </p><p>{gender}</p></div>
-                <div><p>Description: </p><p>{description}</p></div>
-                <div><p>Date of Birth: </p><p>{DOB}</p></div>
-            </section>
-            <section>
-                <div><p>>Height: </p><p>{height}</p></div>
-                <div><p>Current Weight: </p><p>{weight}</p></div>
-                <div><p>Experience: </p><p>{experience}</p></div>
-                <div><p>>Goals: </p><p>{goals}</p></div>
-                <div>
-                    <GymInfo location={gymLoc} />
-                </div>
-                <div><p>Activity Level: </p><p>{act_level}</p></div>
-                <div><p>Maximum Heart Rate</p><p>{MHR}</p></div>
-                <div><p>Daily Caloric Expenditure</p><p>{caloricExp}</p></div>
-            </section>
+            <LeftPane>
+                <Card>
+                    <Image src={image} wrapped ui={false}/>
+                    <Card.Header>{name}</Card.Header>
+                    <Card.Description>
+                        <div><p>Age: {age}</p><br />
+                            <p>Gender: {gender}</p><br />
+                            <p>Description: {description}</p><br />
+                            <p>Date of Birth: {DOB}</p>
+                        </div>
+                    </Card.Description>
+                </Card>
+               
+                
+            </LeftPane>
+            <RightPane>
+                <Grid>
+                    <Grid.Row>
+                        <Grid.Column> Height: </Grid.Column>
+                        <Grid.Column>{height}</Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>Current Weight:  </Grid.Column>
+                        <Grid.Column>{weight}</Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>Experience Level: </Grid.Column>
+                        <Grid.Column>{experience}</Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>Goals: </Grid.Column>
+                        <Grid.Column>{goals.map(goal => <p>{goal}</p>)}</Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>Gym Location:  </Grid.Column>
+                        <Grid.Column><GymInfo location={gymLoc} /></Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>Activity Level: </Grid.Column>
+                        <Grid.Column>{act_level}</Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>Maximum Heart Rate: </Grid.Column>
+                        <Grid.Column>{MHR}</Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>Daily Caloric Expenditure</Grid.Column>
+                        <Grid.Column>{caloricExp}</Grid.Column>
+                    </Grid.Row>
+                </Grid>
+               
+            </RightPane>
         </main>
 
         
