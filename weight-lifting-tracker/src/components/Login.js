@@ -1,7 +1,6 @@
 import React from 'react'
 import { withFormik, Field } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 // Styled component imported for the login form submit button
@@ -45,7 +44,7 @@ const Login = withFormik({
         password: Yup.string().min(7, 'Password Must Be Longer Than 7 Characters').required('Password is Required')
     }),
     handleSubmit(values,{ resetForm, props }) {
-        
+
         axios.post('', values)
             .then(response => {
                 console.log(response)
