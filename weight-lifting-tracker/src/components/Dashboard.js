@@ -2,6 +2,8 @@ import React from 'react'
 import PersonDetails from './PersonDetails'
 import Journal from './Journal'
 import {Tab} from 'semantic-ui-react'
+import Header from "./Header2"
+import Footer from './Footer'
 
 const panes = [
     {
@@ -20,6 +22,10 @@ const panes = [
 
 export default function TabNavigation(){
     return (
+        <div>
+        <Header />
         <Tab menu={{ pointing: true }} panes={panes} />
+        <Footer />
+        </div>
     )
 }
