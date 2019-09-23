@@ -1,30 +1,47 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 function UserTable(props) {
   return (
     <table>
-      <thead>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {props.users.length > 0 ? (
+        props.users.map(user => (
+          <tr key={user.id}>
+            <td>{user.name}</td>
+            <td>{user.username}</td>
+            <td>
+              <button className="button muted-button">Edit</button>
+              <button className="button muted-button">Delete</button>
+            </td>
+          </tr>
+        ))
+      ) : (
         <tr>
-          <th>Name</th>
-          <th>Username</th>
-          <th>Actions</th>
+          <td colSpan={3}>No users</td>
         </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Name data</td>
-          <td>Username data</td>
-          <td>
-            <button className="button muted-button">Edit</button>
-            <button className="button muted-button">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      )}
+    </tbody>
+  </table>
   )
 }
 
 export default function UserWorkout(props) {
+
+  const usersData = [
+    { id: 1, name: 'Tania', username: 'floppydiskette' },
+    { id: 2, name: 'Craig', username: 'siliconeidolon' },
+    { id: 3, name: 'Ben', username: 'benisphere' },
+  ];
+
+  const [users, setUsers] = useState(usersData);
+
   return (
     <div className="container">
       <h1>CRUD App with Hooks</h1>
@@ -34,7 +51,7 @@ export default function UserWorkout(props) {
         </div>
         <div className="flex-large">
           <h2>View users</h2>
-          <UserTable />
+          <UserTable users={users} />
         </div>
       </div>
     </div>
