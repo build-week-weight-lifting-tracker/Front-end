@@ -1,36 +1,6 @@
 import React, {useState, useEffect} from 'react';
-
-function UserTable(props) {
-  return (
-    <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Username</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      {props.users.length > 0 ? (
-        props.users.map(user => (
-          <tr key={user.id}>
-            <td>{user.name}</td>
-            <td>{user.username}</td>
-            <td>
-              <button className="button muted-button">Edit</button>
-              <button className="button muted-button">Delete</button>
-            </td>
-          </tr>
-        ))
-      ) : (
-        <tr>
-          <td colSpan={3}>No users</td>
-        </tr>
-      )}
-    </tbody>
-  </table>
-  )
-}
+import UserTable from './UserTable.js';
+import AddUserForm from './AddUserForm.js'
 
 export default function UserWorkout(props) {
 
@@ -42,12 +12,18 @@ export default function UserWorkout(props) {
 
   const [users, setUsers] = useState(usersData);
 
+  const addUser = user => {
+    user.id = users.length + 1
+    setUsers([...users, user])
+  }
+
   return (
     <div className="container">
       <h1>CRUD App with Hooks</h1>
       <div className="flex-row">
         <div className="flex-large">
           <h2>Add user</h2>
+          <AddUserForm addUser={addUser} />
         </div>
         <div className="flex-large">
           <h2>View users</h2>
