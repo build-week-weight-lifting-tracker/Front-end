@@ -21,7 +21,7 @@ function WeightForm({values, touched, errors}){
         console.log(response.data.muscle)
         })
         .catch(err => console.log(`Error: ${err}`))
-    }, [])
+    }, [exerciseLog])
   
 
     return(
