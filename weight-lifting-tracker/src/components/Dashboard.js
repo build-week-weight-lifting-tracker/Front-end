@@ -4,6 +4,7 @@ import Journal from './Journal'
 import {Tab} from 'semantic-ui-react'
 import Header from "./Header2"
 import Footer from './Footer'
+import ExerciseList from './ExerciseList'
 
 const panes = [
     {
@@ -15,8 +16,8 @@ const panes = [
       render: () => <Tab.Pane attached={false}><Journal /></Tab.Pane>,
     },
     {
-      menuItem: 'Tab 3',
-      render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane>,
+      menuItem: 'Exercise List',
+      render: () => <Tab.Pane attached={false}><ExerciseList /></Tab.Pane>,
     },
   ]
 
