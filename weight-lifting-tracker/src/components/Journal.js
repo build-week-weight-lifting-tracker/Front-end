@@ -7,6 +7,8 @@ import Equipment from './Equipment'
 import Category from './Category'
 import Exercise from './Exercise'
 import TargetArea from './TargetArea'
+import Header from './Header2'
+import Footer from './Footer'
 
 const api = "https://wger.de/api/v2/"
 
@@ -19,38 +21,39 @@ function WeightForm({values, touched, errors}){
         console.log(response.data.muscle)
         })
         .catch(err => console.log(`Error: ${err}`))
-    }, [])
+    }, [exerciseLog])
   
 
     return(
+        <>
+        <Header />
         <Form>
             <div>
-            <Field component='select' name='daysOfWeek'>
-                <option>Select Day Of The Week</option>
-                {console.log(exerciseLog)}
+            <Field component='select' name='daysOfWeek' placeholder='Select Day of The Week'>
+                <option>Select Day of The Week'</option>
                 {/*exerciseLog.daysofweek.results.map(dayOfWeek => <DaysOfWeek DOW={dayOfWeek.day_of_week}/>)*/}
             </Field>
             </div>
             <div>
-            <Field component='select' name='category'>
+            <Field component='select' name='category' placeholder='Select Category'>
                 <option>Select Category</option>
                 {/*exerciseLog.exercisecategory.results.map(cat => <Equipment name={cat.name}/>)*/}
             </Field>
             </div>
             <div>
-            <Field component='select' name="bodyPart">
+            <Field component='select' name="bodyPart" placeholder='Select Body Part Targeted'>
                 <option>Select Body Part Targeted</option>
                 {/*exerciseLog.muscle.results.map(part => <TargetArea name={part.name}/>)*/}
             </Field>
             </div>
             <div>
-            <Field component='select' name="exercise">
+            <Field component='select' name="exercise" placeholder='Select Exercise Performed'>
                 <option>Select Exercise Performed</option>
                 {/*exerciseLog.exercise.results.map(movement => <Exercise name={movement.name}/>)*/}
             </Field>
             </div>
             <div>
-            <Field component='select' name='equipmentUsed'>
+            <Field component='select' name='equipmentUsed' placeholder='Select Type of Equipment Used'>
                 <option>Equipment Used</option>
                 {/*exerciseLog.equipment.results.map(type => <Category name={type.name}/>)*/}
             </Field>
@@ -63,8 +66,10 @@ function WeightForm({values, touched, errors}){
             <label>Enter Amount of Weight Used (lbs)
             <Field type='text'name="amountWeight"></Field></label>
             </div>
-        
+            <button>Submit</button>       
         </Form>
+        <Footer />
+        </>
     )
 }
 
