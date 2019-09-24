@@ -27,44 +27,45 @@ const extActive = 1.9
 
 export default function PersonDetails({image, name, age, gender, DOB, location, experience, height, weight, goals, description, act_level, gymLoc}){
     const MHR = 220 - age;
+    let caloricExp = 0;
     if(gender === 'M'){
         switch(act_level){
             case 'Lightly Active':
-                const caloricExp = lightActive * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);
+                caloricExp = lightActive * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);
                 break; 
             case 'Moderately Active':
-                const caloricExp = modActive * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);
+                caloricExp = modActive * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);
                 break;
             case 'Very Active':
-                const caloricExp = veryActive * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);
+                caloricExp = veryActive * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);
                 break;
             case 'Extremely Active':
-                const caloricExp = extActive * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);         
+                caloricExp = extActive * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);         
                 break;
             default:
-                const caloricExp = sedentary * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);
+                caloricExp = sedentary * ( (6.25 * weight) + (12.7 * height) - (6.76 * age) + 66);
         }
     }
     else {
         switch(act_level){
             case 'Lightly Active':
-                const caloricExp = lightActive * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);
+                caloricExp = lightActive * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);
                 break; 
             case 'Moderately Active':
-                const caloricExp = modActive * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);
+                caloricExp = modActive * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);
                 break;
             case 'Very Active':
-                const caloricExp = veryActive * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);
+                caloricExp = veryActive * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);
                 break;
             case 'Extremely Active':
-                const caloricExp = extActive * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);         
+                caloricExp = extActive * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);         
                 break;
             default:
-                const caloricExp = sedentary * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);
+                caloricExp = sedentary * ( (4.35 * weight) + (4.7 * height) - (4.68 * age) + 655);
         }
     }
     return (
-        <main>
+        <Main>
             <LeftPane>
                 <Card>
                     <Image src={image} wrapped ui={false}/>
@@ -117,7 +118,7 @@ export default function PersonDetails({image, name, age, gender, DOB, location, 
                 </Grid>
                
             </RightPane>
-        </main>
+        </Main>
 
         
     )
