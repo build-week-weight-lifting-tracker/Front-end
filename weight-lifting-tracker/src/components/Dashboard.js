@@ -5,7 +5,7 @@ import {Tab} from 'semantic-ui-react'
 import Header from "./Header2"
 import Footer from './Footer'
 import ExerciseList from './ExerciseList'
-import {NavLink, Route} from 'reacter-router-dom'
+import {NavLink, Route, matchPath} from 'reacter-router-dom'
 
 const panes = [
     {
@@ -47,11 +47,18 @@ const panes = [
     },
   ]
 
+  const defaultActiveIndex = panes.findIndex(pane => {
+    return !!matchPath(window.location.pathname, {
+      path: pane.menuItem.to,
+      exact: true
+    });
+  });
+
 export default function TabNavigation(){
     return (
         <div>
         <Header />
-        <Tab menu={{ pointing: true }} panes={panes} />
+        <Tab defaultActiveIndex={defaultActiveIndex} menu={{ pointing: true }} panes={panes} />
         <Footer />
         </div>
     )
