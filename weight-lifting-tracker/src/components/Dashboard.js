@@ -5,19 +5,45 @@ import {Tab} from 'semantic-ui-react'
 import Header from "./Header2"
 import Footer from './Footer'
 import ExerciseList from './ExerciseList'
+import {NavLink, Route} from 'reacter-router-dom'
 
 const panes = [
     {
-      menuItem: 'Personal Info',
-      render: () => <Tab.Pane attached={false}><PersonDetails /></Tab.Pane>,
+      menuItem: {
+        as: NavLink,
+        content: "Home",
+        to: "/",
+        key: "home",
+        exact: true
+      },
+      render: () => <Route path="/"><Tab.Pane attached={false}></Tab.Pane></Route>
     },
     {
-      menuItem: 'Workout Journal',
-      render: () => <Tab.Pane attached={false}><Journal /></Tab.Pane>,
+      menuItem: {
+        as: NavLink,
+        content: "Profile",
+        to: "/profile",
+        key: "profile"
+      },
+      render: () => <Route path="/profile"><Tab.Pane attached={false}><PersonDetails /></Tab.Pane></Route>,
     },
     {
-      menuItem: 'Exercise List',
-      render: () => <Tab.Pane attached={false}><ExerciseList /></Tab.Pane>,
+      menuItem: {
+        as: NavLink,
+        content: "Workout Journal",
+        to: "/journal",
+        key: "journal"
+      },
+      render: () => <Route path="/journal"><Tab.Pane attached={false}><Journal /></Tab.Pane></Route>,
+    },
+    {
+      menuItem: {
+        as: NavLink,
+        content: 'Exercise List',
+        to: "/exercises",
+        key: "exercises"
+      },
+      render: () => <Route path="/exercises"><Tab.Pane attached={false}><ExerciseList /></Tab.Pane></Route>,
     },
   ]
 
