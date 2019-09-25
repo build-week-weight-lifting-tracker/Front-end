@@ -19,7 +19,6 @@ export const AppContainer = styled.div `
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 `
 export const FieldDiv = styled.div `
     display:flex;
