@@ -6,4 +6,3 @@ command = "npm run build"
 from = "/*"
 to = "/index.html"
 status = 200
-Collapse
