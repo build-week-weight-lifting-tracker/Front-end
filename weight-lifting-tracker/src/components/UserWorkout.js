@@ -7,12 +7,12 @@ export default function UserWorkout(props) {
 
   // Dummy Data
   const usersData = [
-    { id: 1, name: 'Tania', username: 'floppydiskette' },
-    { id: 2, name: 'Craig', username: 'siliconeidolon' },
-    { id: 3, name: 'Ben', username: 'benisphere' },
+    { id: 1, name: 'Pull Up', lifted: '0', sets: '3', reps: '10' },
+    { id: 2, name: 'Bench Press', lifted: '225', sets: '3', reps: '10' },
+    { id: 3, name: 'Squat', lifted: '405', sets: '3', reps: '10' },
   ];
 
-  const initialFormState = { id: null, name: '', username: '' };
+  const initialFormState = { id: null, name: '', lifted: '', sets: '', reps: '' };
 
   // Set State
   const [users, setUsers] = useState(usersData);
@@ -39,7 +39,7 @@ export default function UserWorkout(props) {
 
 	const editRow = user => {
 		setEditing(true)
-		setCurrentUser({ id: user.id, name: user.name, username: user.username })
+		setCurrentUser({ id: user.id, name: user.name, lifted: user.lifted, sets: user.sets, reps: user.reps })
 	}
 
   return (
@@ -47,7 +47,7 @@ export default function UserWorkout(props) {
       <div className="flex-row">
       <div className="flex-large">
         {editing ? (
-          <div>
+          <div className='workoutform'>
             <h2>Edit user</h2>
             <EditUserForm
               editing={editing}
@@ -58,13 +58,13 @@ export default function UserWorkout(props) {
           </div>
         ) : (
           <div>
-            <h2>Add user</h2>
+            <h2>Add Exercise</h2>
             <AddUserForm addUser={addUser} />
           </div>
         )}
       </div>
         <div className="flex-large">
-          <h2>View users</h2>
+          <h2>View Exercises</h2>
           <UserTable users={users} editRow={editRow} deleteUser={deleteUser} />
         </div>
       </div>
