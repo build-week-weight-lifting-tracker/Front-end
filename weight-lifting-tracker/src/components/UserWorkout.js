@@ -47,7 +47,7 @@ export default function UserWorkout(props) {
       <div className="flex-row">
       <div className="flex-large">
         {editing ? (
-          <div>
+          <div className='workoutform'>
             <h2>Edit user</h2>
             <EditUserForm
               editing={editing}
@@ -64,7 +64,7 @@ export default function UserWorkout(props) {
         )}
       </div>
         <div className="flex-large">
-          <h2>View users</h2>
+          <h2>View Exercises</h2>
           <UserTable users={users} editRow={editRow} deleteUser={deleteUser} />
         </div>
       </div>

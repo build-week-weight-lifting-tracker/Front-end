@@ -29,7 +29,7 @@ const EditUserForm = props => {
       <input type="text" name="sets" value={user.sets} onChange={handleInputChange} />
       <label>Reps</label>
       <input type="text" name="reps" value={user.reps} onChange={handleInputChange} />
-      <button>Update user</button>
+      <button>Update Exercise</button>
       <button onClick={() => props.setEditing(false)} className="button muted-button">
         Cancel
       </button>
