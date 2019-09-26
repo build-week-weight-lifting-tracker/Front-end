@@ -24,6 +24,7 @@ export default function App() {
       
       {user ? <Route exact path='/' component={TabNavigation} /> : <Route exact path='/' component={Home} />}
 
+
     {/*<Route path='/user' component={UserWorkout} />*/}
       <Route path='/login' render={props => <Login {...props} setUser={setUser} /> } />
       <Route path='/register' render={props => <Register {...props} setUser={setUser} /> } />
