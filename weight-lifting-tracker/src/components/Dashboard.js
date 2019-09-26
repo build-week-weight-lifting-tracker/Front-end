@@ -1,11 +1,12 @@
 import React from 'react'
 import PersonDetails from './PersonDetails'
-import FormikWeightForm from './Journal'
+/*import FormikWeightForm from './Journal'*/
 import {Tab} from 'semantic-ui-react'
 import Header from "./Header2"
 import Footer from './Footer'
 import ExerciseList from './ExerciseList'
-import {NavLink, Route, matchPath} from 'reacter-router-dom'
+import UserWorkout from './UserWorkout'
+import {NavLink, Route, matchPath} from 'react-router-dom'
 
 const panes = [
     {
@@ -34,7 +35,7 @@ const panes = [
         to: "/journal",
         key: "journal"
       },
-      render: () => <Route path="/journal"><Tab.Pane attached={false}><FormikWeightForm /></Tab.Pane></Route>,
+      render: () => <Route path="/journal"><Tab.Pane attached={false}><UserWorkout /></Tab.Pane></Route>,
     },
     {
       menuItem: {
