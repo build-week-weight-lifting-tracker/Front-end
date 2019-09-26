@@ -5,7 +5,7 @@ import { Form } from 'formik';
 export const FormContainer = styled(Form)`
 background-color: rgba(52, 27, 43, 0.5);
 padding: 40px;
-width: 70%
+width: 70%;
 max-width: 800px;
 display: flex;
 flex-direction: column;
