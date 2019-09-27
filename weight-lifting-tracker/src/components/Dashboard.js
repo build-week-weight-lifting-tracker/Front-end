@@ -7,17 +7,18 @@ import Footer from './Footer'
 import ExerciseList from './ExerciseList'
 import UserWorkout from './UserWorkout'
 import {NavLink, Route, matchPath} from 'react-router-dom'
+import Welcome from './Welcome'
 
 const panes = [
     {
       menuItem: {
         as: NavLink,
-        content: "Home",
+        content: "Home" ,
         to: "/",
         key: "home",
         exact: true
       },
-      render: () => <Route path="/"><Tab.Pane attached={false}></Tab.Pane></Route>
+      render: () => <Route path="/"><Tab.Pane attached={false}><Welcome /></Tab.Pane></Route>
     },
     {
       menuItem: {
