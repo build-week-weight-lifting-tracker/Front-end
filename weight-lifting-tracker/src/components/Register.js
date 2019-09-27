@@ -67,7 +67,7 @@ const Register = withFormik({
     }),
 
     handleSubmit(values, { resetForm }, props) {
-        axios.post('', values)
+        axios.post('https://weightlifting-tracker-bw.herokuapp.com/', values)
             .then(response => {
                 console.log(response)
                 props.serUser(response.data)
