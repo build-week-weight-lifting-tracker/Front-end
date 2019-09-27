@@ -47,13 +47,15 @@ export default function ExerciseList(props) {
 
   const id = useEffect(() => {
     const getExercise = () => {
-      axios.get(`https://wger.de/api/v2/exercise/?page=${page}`)
+      {/* https://wger.de/api/v2/exercise/?page=${page} */}
+      {/* https://weightlifting-tracker-bw.herokuapp.com/api/exercises */}
+      axios.get(`https://weightlifting-tracker-bw.herokuapp.com/api/exercises`)
         .then(res => {
-          console.log(res);
-          setExercise(res.data.results);
+          console.log("Response Value", res);
+          setExercise(res.data);
         })
         .catch(err => {
-          console.err('ERROR', err);
+          console.log('ERROR', err);
         })
     }
     getExercise();
@@ -96,11 +98,8 @@ function ExerciseDetails({exercise}) {
     <Card className='exercise-card'>
       <Card.Content>
 
-        <Card.Header>{stripHTML(exercise.name)}</Card.Header>
-        <Card.Description>Description: {stripHTML(exercise.description)}</Card.Description>
-        <Card.Description>Muscles: {muscleArr.push(exercise.muscles)}</Card.Description>
-        <Card.Description>Secodary Muscles: {secondaryMuscleArr.push(exercise.muscles_secondary)}</Card.Description>
-        <Card.Description>Equipment Number: {exercise.equipment.length}</Card.Description>
+        <Card.Header>{exercise.id}</Card.Header>
+        <Card.Description>Name: {exercise.exercise}</Card.Description>
       </Card.Content>
     </Card>
   );
