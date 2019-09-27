@@ -45,7 +45,7 @@ const Login = withFormik({
     }),
     handleSubmit(values,{ resetForm, props }) {
 
-        axios.post('https://weightlifting-tracker-bw.herokuapp.com/', values)
+        axios.post('https://weightlifting-tracker-bw.herokuapp.com/api/login', values)
             .then(response => {
                 console.log(response)
                 props.setUser(response.data)
