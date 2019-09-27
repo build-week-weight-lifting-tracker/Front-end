@@ -23,7 +23,7 @@ function LoginInput ({values, errors, touched}) {
             <FieldDiv>
                 {/* User Password Input */}
                 {touched.password && errors.password && <p>{errors.password}</p>}
-                <Field type='text' name='password' placeholder='Password' />
+                <Field type='password' name='password' placeholder='Password' />
             </FieldDiv>
             
                 <LoginButton type='submit'>Submit</LoginButton>
