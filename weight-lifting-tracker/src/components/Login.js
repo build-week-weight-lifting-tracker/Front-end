@@ -23,7 +23,7 @@ function LoginInput ({values, errors, touched}) {
             <FieldDiv>
                 {/* User Password Input */}
                 {touched.password && errors.password && <p>{errors.password}</p>}
-                <Field type='text' name='password' placeholder='Password' />
+                <Field type='password' name='password' placeholder='Password' />
             </FieldDiv>
             
                 <LoginButton type='submit'>Submit</LoginButton>
@@ -45,7 +45,7 @@ const Login = withFormik({
     }),
     handleSubmit(values,{ resetForm, props }) {
 
-        axios.post('https://weightlifting-tracker-bw.herokuapp.com/', values)
+        axios.post('https://weightlifting-tracker-bw.herokuapp.com/api/login', values)
             .then(response => {
                 console.log(response)
                 props.setUser(response.data)

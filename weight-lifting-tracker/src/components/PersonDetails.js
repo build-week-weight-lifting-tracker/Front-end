@@ -25,7 +25,19 @@ const modActive = 1.55
 const veryActive = 1.725
 const extActive = 1.9
 
-export default function PersonDetails({image, name, age, gender, DOB, location, experience, height, weight, goals, description, act_level, gymLoc}){
+export default function PersonDetails({image = "https://via.placeholder.com/150", 
+    name = 'John Doe', 
+    age = 18, gender = 'M', 
+    email="abcd@efgh.com",
+    DOB = '8/1/2001', 
+    location = 'OneTown, CA', 
+    experience = 'Beginner',
+    height = 72, 
+    weight = 180,
+    goals = ['To increase cardio', 'To increase muscle mass'],
+    description = 'Large and in charge',
+    act_level = 'Moderately Active',
+    gymLoc = 'OneTown, CA'}){
     const MHR = 220 - age;
     let caloricExp = 0;
     if(gender === 'M'){
