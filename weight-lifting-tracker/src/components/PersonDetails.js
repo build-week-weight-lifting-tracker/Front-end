@@ -25,9 +25,10 @@ const modActive = 1.55
 const veryActive = 1.725
 const extActive = 1.9
 
-export default function PersonDetails({image, 
+export default function PersonDetails({image = "https://via.placeholder.com/150", 
     name = 'John Doe', 
     age = 18, gender = 'M', 
+    email="abcd@efgh.com",
     DOB = '8/1/2001', 
     location = 'OneTown, CA', 
     experience = 'Beginner',
